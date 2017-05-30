@@ -39,7 +39,7 @@ feedButton.addEventListener("click", function(){//adds click event listener
   hungerMeter.innerText = bear.hunger;//sets hunger meter text to hunger value in bear object
 
 	})
-	hungerMeter.innerText = bear.hunger;//sets hunger meter text to hunger value in bear object
+	// hungerMeter.innerText = bear.hunger;//sets hunger meter text to hunger value in bear object
 
 setInterval(
   function(){
@@ -69,11 +69,11 @@ setInterval(
 	3000);
 
 var faces = function (){
-	if (bear.hunger > 6 && bear.hunger < 10) {// if the score is greater than 6
+	if (bear.hunger > 6 && bear.hunger < 10 || bear.boredom > 6 && bear.boredom < 10 || bear.sleepiness > 6 && bear.sleepiness < 10) {// if the score is greater than 6
 	  image.setAttribute("src", "https://s-media-cache-ak0.pinimg.com/236x/b5/da/ab/b5daaba84f15204e39afbc3462c4004b.jpg");//changes the image source attribute to a new image
-	} else if (bear.hunger >= 10) {
+	} else if (bear.hunger >= 10 || bear.boredom >= 10 || bear.sleepiness >= 10) {
 		image.setAttribute("src", "https://images-na.ssl-images-amazon.com/images/I/41DMiDVRWeL._AC_UL320_SR250,320_.jpg");
-	} else if (bear.hunger < 4){
+	} else if (bear.hunger < 4 || bear.sleepiness < 4 || bear.sleepiness < 4) {
 		image.setAttribute("src", "http://www.abc.net.au/triplej/radiohead/img/bear.gif");
 	} else {
 			image.setAttribute("src", "http://emblemsbf.com/img/1379.jpg")
