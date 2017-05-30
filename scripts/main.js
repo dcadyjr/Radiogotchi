@@ -43,14 +43,32 @@ feedButton.addEventListener("click", function(){//adds click event listener
 
 setInterval(
   function(){
-    bear.hunger++;
-    hungerMeter.innerText = bear.hunger;
+    bear.boredom++;
+    boredomMeter.innerText = bear.boredom;
 
-    almostDeadFace ();//calls the image changeing function below
+    faces ();//calls the image changeing function below
   },
 	3000);
 
-var almostDeadFace = function (){
+setInterval(
+  function(){
+    bear.sleepiness++;
+    sleepinessMeter.innerText = bear.sleepiness;
+
+    faces ();//calls the image changeing function below
+  },
+	3000);
+
+setInterval(
+  function(){
+    bear.hunger++;
+    hungerMeter.innerText = bear.hunger;
+
+    faces ();//calls the image changeing function below
+  },
+	3000);
+
+var faces = function (){
 	if (bear.hunger > 6 && bear.hunger < 10) {// if the score is greater than 6
 	  image.setAttribute("src", "https://s-media-cache-ak0.pinimg.com/236x/b5/da/ab/b5daaba84f15204e39afbc3462c4004b.jpg");//changes the image source attribute to a new image
 	} else if (bear.hunger >= 10) {
