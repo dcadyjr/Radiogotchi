@@ -8,6 +8,14 @@ var bear = {
 	feed: function(){
 		alert("tasty!");
 		this.hunger = this.hunger - 1;
+	},
+	excite: function(){
+		alert("yes");
+		this.boredom = this.boredom - 1;
+	},
+	sleep: function(){
+		alert("Fitter Happier");
+		this.sleepiness = this.sleepiness - 1;
 	}
 };
 //Global variables
@@ -25,6 +33,8 @@ sleepinessMeter.innerText = bear.sleepiness;
 var nameButton = document.getElementById("nameButton");//gets name button element
 nameButton.addEventListener("click", function(){//adds click event listener
 
+
+
 //end Global variables
 
   var name = document.getElementById("bearName").value;//stores name value from input box
@@ -32,14 +42,25 @@ nameButton.addEventListener("click", function(){//adds click event listener
   alert("Why don't you remember my name!")//alert
 });
 
-var feedButton = document.getElementById("feed");//gets feed button element
 
+var feedButton = document.getElementById("feed");//gets feed button element
 feedButton.addEventListener("click", function(){//adds click event listener
   bear.feed();//runs feed function from object
   hungerMeter.innerText = bear.hunger;//sets hunger meter text to hunger value in bear object
-
 	})
-	// hungerMeter.innerText = bear.hunger;//sets hunger meter text to hunger value in bear object
+
+	var boredButton = document.getElementById("bored");
+	boredButton.addEventListener("click", function() {
+		bear.excite();
+		boredomMeter.innerText = bear.boredom;
+	})
+
+	var sleepButton = document.getElementById("sleep");
+	sleepButton.addEventListener("click", function() {
+		bear.sleep();
+		sleepinessMeter.innerText = bear.sleepiness;
+	})
+
 
 setInterval(
   function(){
