@@ -19,18 +19,18 @@ var bear = {
 	}
 };
 //Global variables
-var image = document.getElementById("start");//gets the image element
+var image = $("#start")[0];//gets the image element
 
-var hungerMeter = document.getElementById("hunger");
-hungerMeter.innerText = bear.hunger;
+var hungerMeter = $("#hunger")[0];//gets bunger span
+hungerMeter.innerText = bear.hunger;//sets the text of the hungermeter = to the hunger property value
 
-var	boredomMeter = document.getElementById("boredom");
+var	boredomMeter = $("#boredom")[0];//gets boredom span
 boredomMeter.innerText = bear.boredom;
 
-var sleepinessMeter = document.getElementById("sleepiness");
+var sleepinessMeter = $("#sleepiness")[0];
 sleepinessMeter.innerText = bear.sleepiness;
 
-var nameButton = document.getElementById("nameButton");//gets name button element
+var nameButton = $("#nameButton")[0];//gets name button element
 nameButton.addEventListener("click", function(){//adds click event listener
 
 
@@ -42,21 +42,19 @@ nameButton.addEventListener("click", function(){//adds click event listener
   alert("Why don't you remember my name!")//alert
 });
 
-
-var feedButton = document.getElementById("feed");//gets feed button element
-feedButton.addEventListener("click", function(){//adds click event listener
+$("#feed").click(function(){//adds click event listener
   bear.feed();//runs feed function from object
   hungerMeter.innerText = bear.hunger;//sets hunger meter text to hunger value in bear object
 	})
 
-	var boredButton = document.getElementById("bored");
-	boredButton.addEventListener("click", function() {
+	
+	$("#bored").click(function() {
 		bear.excite();
 		boredomMeter.innerText = bear.boredom;
 	})
 
-	var sleepButton = document.getElementById("sleep");
-	sleepButton.addEventListener("click", function() {
+	
+	$("#sleep").click(function() {
 		bear.sleep();
 		sleepinessMeter.innerText = bear.sleepiness;
 	})
@@ -102,7 +100,4 @@ var faces = function (){
 	
 }
 
-// var sadDeadFace = function (){
-// 	if (bear.)
-// }
 
