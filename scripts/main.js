@@ -5,21 +5,25 @@ var bear = {
 	hunger: 5,
 	boredom: 5,
 	sleepiness: 5,
+	age: 0,
 	feed: function(){
-		alert("tasty!");
+		// alert("tasty!");
 		this.hunger = this.hunger - 1;
 	},
 	excite: function(){
-		alert("yes");
+		// alert("yes");
 		this.boredom = this.boredom - 1;
 	},
 	sleep: function(){
-		alert("Fitter Happier");
+		// alert("Fitter Happier");
 		this.sleepiness = this.sleepiness - 1;
 	}
 };
 //Global variables
 var image = $("#start")[0];//gets the image element
+
+var ageMeter = $("#age")[0];
+ageMeter.innerText = bear.age;
 
 var hungerMeter = $("#hunger")[0];//gets bunger span
 hungerMeter.innerText = bear.hunger;//sets the text of the hungermeter = to the hunger property value
@@ -42,21 +46,19 @@ nameButton.addEventListener("click", function(){//adds click event listener
   alert("Why don't you remember my name!")//alert
 });
 
-$("#feed").click(function(){//adds click event listener
-  bear.feed();//runs feed function from object
-  hungerMeter.innerText = bear.hunger;//sets hunger meter text to hunger value in bear object
+	$("#feed").click(function(){//puts event listener on button with feed ID
+  	bear.feed();//runs feed function from object
+  	hungerMeter.innerText = bear.hunger;//sets hunger meter text to hunger value in bear object
 	})
 
-	
-	$("#bored").click(function() {
-		bear.excite();
-		boredomMeter.innerText = bear.boredom;
+	$("#bored").click(function() {//puts event listener on button with bored ID
+		bear.excite();//runs excite function from object
+		boredomMeter.innerText = bear.boredom;//sets boredom meter text to boredom value in the bear object
 	})
 
-	
-	$("#sleep").click(function() {
-		bear.sleep();
-		sleepinessMeter.innerText = bear.sleepiness;
+	$("#sleep").click(function() {//puts event listener on button with sleep ID
+		bear.sleep();//runs sleep function from object
+		sleepinessMeter.innerText = bear.sleepiness;////sets sleepiness meter text to sleepiness value in the bear object
 	})
 
 
@@ -64,8 +66,14 @@ setInterval(
   function(){
     bear.boredom++;
     boredomMeter.innerText = bear.boredom;
+  },
+	3000);
 
-    faces ();//calls the image changeing function below
+setInterval(
+  function(){
+    bear.age++;
+    boredomMeter.innerText = bear.age
+
   },
 	3000);
 
