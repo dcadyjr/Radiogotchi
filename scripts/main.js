@@ -72,7 +72,7 @@ setInterval(
 setInterval(
   function(){
     bear.age++;
-    boredomMeter.innerText = bear.age
+    ageMeter.innerText = bear.age
 
   },
 	3000);
