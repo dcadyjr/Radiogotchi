@@ -37,6 +37,7 @@ sleepinessMeter.innerText = bear.sleepiness;
 var nameButton = $("#nameButton")[0];//gets name button element
 nameButton.addEventListener("click", function(){//adds click event listener
 
+var endGame;
 
 
 //end Global variables
@@ -61,39 +62,75 @@ nameButton.addEventListener("click", function(){//adds click event listener
 		sleepinessMeter.innerText = bear.sleepiness;////sets sleepiness meter text to sleepiness value in the bear object
 	})
 
+var boredomClock = function (){
 
-setInterval(
-  function(){
-    bear.boredom++;
-    boredomMeter.innerText = bear.boredom;
+	var setIntervalID = setInterval(
+  		function(){
+
+    	bear.boredom++;
+    	boredomMeter.innerText = bear.boredom;
+
+   	if (bear.hunger === 10 || bear.boredom === 10 || bear.sleepiness === 10) {
+    	clearInterval(setIntervalID); 	
+    }
+
+    faces ();
   },
 	3000);
+}
+	boredomClock ();
 
-setInterval(
-  function(){
-    bear.age++;
-    ageMeter.innerText = bear.age
+var ageClock = function (){
+	var setIntervalID = setInterval(
+  		function(){
+
+    	bear.age++;
+    	ageMeter.innerText = bear.age;
+
+   	if (bear.hunger === 10 || bear.boredom === 10 || bear.sleepiness === 10) {
+    	clearInterval(setIntervalID); 	
+    }
 
   },
+	7000);
+}
+	ageClock ();
+
+var sleepinessClock = function(){
+	
+	var setIntervalID = setInterval(
+  		function(){
+
+    	bear.sleepiness++;
+    	sleepinessMeter.innerText = bear.sleepiness;
+
+   	if (bear.hunger === 10 || bear.boredom === 10 || bear.sleepiness === 10) {
+    	clearInterval(setIntervalID); 	
+    }
+    faces ();//calls the image changeing function below
+  },
 	3000);
+}
+	sleepinessClock ();
 
-setInterval(
-  function(){
-    bear.sleepiness++;
-    sleepinessMeter.innerText = bear.sleepiness;
+var hungerClock = function (){
 
+	var setIntervalID = setInterval(
+  		function(){
+
+    	bear.hunger++;
+    	hungerMeter.innerText = bear.hunger;
+
+   	if (bear.hunger === 10 || bear.boredom === 10 || bear.sleepiness === 10) {
+    	clearInterval(setIntervalID);
+    }
     faces ();//calls the image changeing function below
   },
 	3000);
 
-setInterval(
-  function(){
-    bear.hunger++;
-    hungerMeter.innerText = bear.hunger;
+}
+	hungerClock ();
 
-    faces ();//calls the image changeing function below
-  },
-	3000);
 
 var faces = function (){
 	if (bear.hunger > 6 && bear.hunger < 10 || bear.boredom > 6 && bear.boredom < 10 || bear.sleepiness > 6 && bear.sleepiness < 10) {// if the score is greater than 6
@@ -108,4 +145,10 @@ var faces = function (){
 	
 }
 
+// var gameOver = function () {
+// 	if (bear.hunger === 10 || bear.boredom === 10 || bear.sleepiness === 10){
+// 		Window.clearInterval(hungerInterval);
+// 	}
+// }
+// 	gameOver ();
 
