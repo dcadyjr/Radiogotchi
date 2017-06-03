@@ -185,7 +185,7 @@ var lights = function (){
  $( "#play" ).click(function() {
  
   $( "#start" ).animate({
-    left: "350px"});//on to something. research back and forth. use in if statement
+    left: "350px"});//on to something. research back and forth. use in if statement?
 
 });
 

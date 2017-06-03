@@ -1,8 +1,20 @@
 body {
 	background-image: url("https://s-media-cache-ak0.pinimg.com/originals/b9/f9/fb/b9f9fb93577ce69c77e46aeb6e9221e0.jpg");
+}
+header{
 	text-align: center;
 }
+.left-parent{
+	display: flex;
+	flex-direction: column;
+	height: 300px;
+	width: 150px;
+	border: 2px solid white;
+}
+.left-button{
+	border: 2px solid white;
 
+}
 #start {
 	width: 200px;
 	height: 200px;
