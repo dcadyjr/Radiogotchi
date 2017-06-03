@@ -1,20 +1,60 @@
 body {
 	background-image: url("https://s-media-cache-ak0.pinimg.com/originals/b9/f9/fb/b9f9fb93577ce69c77e46aeb6e9221e0.jpg");
 }
+
 header{
+	font-family: 'Karla', sans-serif;
 	text-align: center;
 }
+.main-parent{
+	display: flex;
+	flex-direction: row-reverse;
+}
+
 .left-parent{
+	margin-left: 20px;
 	display: flex;
 	flex-direction: column;
-	height: 300px;
-	width: 150px;
-	border: 2px solid white;
-}
-.left-button{
-	border: 2px solid white;
+	height: 500px;
+	width: 250px;
+	justify-content: space-between;
 
 }
+
+.left-button{
+	font-family: 'Karla', sans-serif;
+	display: inline-block;
+	width: 200px;
+	padding: 8px;
+	color: #fff;
+	border: 1px solid #fff;
+	text-align: center;
+	outline: none;
+	text-decoration: none;
+
+}
+.left-button:hover,
+.left-button:active{
+	background-color: #fff;
+	color: #000;
+}
+.right-parent{
+	display: flex;
+	flex-direction: column;
+	height:	500px;
+	width:	150px;
+	float: right;
+}
+
+.scores {
+ 	width: 150px;
+ 	height: 50px;
+ 	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+	color:	white;
+ }
+
 #start {
 	width: 200px;
 	height: 200px;
@@ -22,27 +62,25 @@ header{
 	margin: 0 auto;
 	position: relative;
 }
+
 #title{
 	color: white;
 }
+
  #hunger{
- 	background-color: red
+ 	
  }
+
  #sleepiness{
- 	background-color: green;
+ 	
  }
+
  #boredom{
- 	background-color: blue;
+ 	
  }
- .scores {
- 	width: 50px;
- 	height: 50px;
- 	display: inline-block;
-	margin: 0 auto;
-	text-align: center;
- }
+ 
  #age {
- 	background-color: orange;
+ 	
 
  }
 
@@ -56,8 +94,8 @@ header{
  	height: 100%;
  	display: none;
  	z-index: 9999;
+}
 
- }
  #lights-on{
  	margin-top: 400px;
  }

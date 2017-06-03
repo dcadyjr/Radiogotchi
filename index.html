@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script src="scripts/jquery-3.2.1.min.js"></script>
+
 	<title>Radiogotchi</title>
 </head>
 <body>
@@ -11,46 +13,50 @@
 	</header>
 
 	<!-- scoreboards -->
-	<span id="hunger" class="scores">
-		<h3>Hunger</h3>	
-	</span>
-	<span id="boredom" class="scores">
-	</span>
-	<span id="sleepiness" class="scores">	
-	</span>
-	<span id="age" class="scores">
-	</span>
-	
-	<img id="start" src=http://emblemsbf.com/img/1379.jpg>
-	
-	<div class="left-parent">
-		<div class="left-button">
- 			<button id="feed" type="button">Put the flan in my face!</button>
- 		</div>
- 		<div class="left-button">	
- 			<button id="bored" type="button">I want to be part of the human race!</button>
- 		</div>	
- 		<div class="left-button">	
- 			<button id="sleep" type="button">Go to sleep</button>
- 		</div>	
- 		<div class="left-button">	
- 			<input id="bearName" placeholder="Name your bear" type="text">
- 		</div>	
- 		<div class="left-button">	
- 			<button id="nameButton" type="button">My name</button>
- 		</div>	
- 		<div class="left-button">	
- 			<button id="lights" type="button">lights out</button>
- 		</div>	
- 		<div class="left-button">	
- 			<div id="dimmer">
- 				<button id="lights-on" type="button">lights on</button>
- 			</div>
- 		</div>	
- 		<div class="left-button">	
- 			<button id="play" type="button">Play with me</button>
- 		</div>	
- 	</div>	
+	<div class="main-parent">
+				<div class="right-parent">
+					<span id="hunger" class="scores">	
+					</span>
+					<span id="boredom" class="scores">
+					</span>
+					<span id="sleepiness" class="scores">	
+					</span>
+					<span id="age" class="scores">
+					</span>
+				</div>
+
+				<img id="start" src=http://emblemsbf.com/img/1379.jpg>
+				
+				<div class="left-parent">
+					<div class="left-button">
+			 			<a id="feed" class="game-btn" type="button">Put the flan in my face!</a>
+			 		</div>
+			 		<div id ="bored-btn" class="left-button">	
+			 			<a id="bored" type="button">I want to be part of the human race!</a>
+			 		</div>	
+			 		<div class="left-button">	
+			 			<a id="sleep" class="game-btn" type="button">Go to sleep</a>
+			 		</div>	
+			 		<div class="left-button">	
+			 			<input id="bearName" class="game-btn" placeholder="Name your bear" type="text">
+			 		</div>	
+			 		<div class="left-button">	
+			 			<a id="nameButton" class="game-btn" type="button">My name</a>
+			 		</div>	
+			 		<div class="left-button">	
+			 			<a id="lights" class="game-btn" type="button">lights out</a>
+			 		</div>	
+			 		<div class="left-button">	
+			 			<div id="dimmer">
+			 				<a id="lights-on" type="button">lights on</a>
+			 			</div>
+			 		</div>	
+			 		<div class="left-button">	
+			 			<a id="play" class="game-btn" type="button">Play with me</a>
+			 		</div>	
+			 	</div>
+	<div>	
+		 		
  	<script src="./scripts/main.js"></script>
 </body>
 </html>

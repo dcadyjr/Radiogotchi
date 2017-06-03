@@ -62,7 +62,7 @@ var feed = function (){
 	feed();
 
 var play = function (){
-	$("#bored").click(function() {//puts event listener on button with bored ID
+	$("#bored-btn").click(function() {//puts event listener on button with bored ID
 		bear.excite();//runs excite function from object
 		boredomMeter.innerText = bear.boredom;//sets boredom meter text to boredom value in the bear object
 	})
@@ -171,7 +171,7 @@ var bright = function() {
 //function for turning lights on and off
 var lights = function (){
 
-	$("#lights").click(function(){//calls the dimmer function on button click
+	$("#lights-on").click(function(){//calls the dimmer function on button click
 		dimmer();
 	})
 
