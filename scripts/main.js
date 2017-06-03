@@ -154,26 +154,28 @@ var faces = function (){
 
 var dimmer = function() {
 	$("#dimmer").show();
-	$("#lights").html("lights on")
-
+	// $("#lights").html("lights on")
 }
+
+var bright = function() {
+	$("#dimmer").hide();
+}
+
 
 var lights = function (){
+	// var totalClicks = 0;
 
 	$("#lights").click(function(){
-		dimmer();	
+
+		dimmer();
 	})
+	$("#lights-on").click(function(){
+		bright();
+	})
+	
+		// totalClicks = totalClicks +1;
+		// console.log(totalClicks);
 }
+
  lights();
-
-	// $("#feed").click(function(){//puts event listener on button with feed ID
- //  	bear.feed();//runs feed function from object
- //  	hungerMeter.innerText = bear.hunger;//sets hunger meter text to hunger value in bear object
-	// })
-
-	// 		) 
-// 		// ($($("#lights").html("lights on")));
-		
-// //     if (typeof bool=='undefined') bool=true; // so you can shorten dim(true) to dim()
-// //     document.getElementById('dimmer').style.display=(bool?'block':'none');
 
