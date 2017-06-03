@@ -8,6 +8,10 @@ body {
 	height: 200px;
 	display: block;
 	margin: 0 auto;
+	position: relative;
+}
+#title{
+	color: white;
 }
  #hunger{
  	background-color: red

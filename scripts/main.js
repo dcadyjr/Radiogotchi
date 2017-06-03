@@ -53,21 +53,29 @@ var nameButton = $("#nameButton")[0];//gets name button element
 //end Global variables
 
 
-
+var feed = function (){
 	$("#feed").click(function(){//puts event listener on button with feed ID
   	bear.feed();//runs feed function from object
   	hungerMeter.innerText = bear.hunger;//sets hunger meter text to hunger value in bear object
 	})
+}
+	feed();
 
+var play = function (){
 	$("#bored").click(function() {//puts event listener on button with bored ID
 		bear.excite();//runs excite function from object
 		boredomMeter.innerText = bear.boredom;//sets boredom meter text to boredom value in the bear object
 	})
+}
+	play ();
 
+var sleep = function () {
 	$("#sleep").click(function() {//puts event listener on button with sleep ID
 		bear.sleep();//runs sleep function from object
 		sleepinessMeter.innerText = bear.sleepiness;////sets sleepiness meter text to sleepiness value in the bear object
 	})
+}
+	sleep ();
 
 var boredomClock = function (){
 
@@ -151,31 +159,33 @@ var faces = function (){
 	}
 	
 }
-
+//varialbles for lights function
 var dimmer = function() {
-	$("#dimmer").show();
-	// $("#lights").html("lights on")
+	$("#dimmer").show();//shows the #dimmer css
 }
 
 var bright = function() {
-	$("#dimmer").hide();
+	$("#dimmer").hide();//hides the #dimmer css
 }
 
-
+//function for turning lights on and off
 var lights = function (){
-	// var totalClicks = 0;
 
-	$("#lights").click(function(){
-
+	$("#lights").click(function(){//calls the dimmer function on button click
 		dimmer();
 	})
-	$("#lights-on").click(function(){
+
+	$("#lights-on").click(function(){//calls the bright funtion on button click
 		bright();
 	})
-	
-		// totalClicks = totalClicks +1;
-		// console.log(totalClicks);
 }
-
  lights();
+
+//Animations
+ $( "#play" ).click(function() {
+ 
+  $( "#start" ).animate({
+    left: "350px"});//on to something. research back and forth. use in if statement
+
+});
 
