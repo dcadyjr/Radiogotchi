@@ -20,6 +20,12 @@ var bear = {
 	}
 };
 //Global variables
+
+var dimmer = function() {
+	$("#dimmer").show();
+	$("#lights").html("lights on")
+	}
+
 var image = $("#start")[0];//gets the image element
 
 var ageMeter = $("#age")[0];
@@ -35,17 +41,18 @@ var sleepinessMeter = $("#sleepiness")[0];
 sleepinessMeter.innerText = bear.sleepiness;
 
 var nameButton = $("#nameButton")[0];//gets name button element
-nameButton.addEventListener("click", function(){//adds click event listener
-
-var endGame;
+	
+	nameButton.addEventListener("click", function(){//adds click event listener
+	var name = document.getElementById("bearName").value;//stores name value from input box
+  	bear.name = name;//puts the name value into the bear object
+  	alert("Why don't you remember my name!")//alert
+	});
+// var endGame;
 
 
 //end Global variables
 
-  var name = document.getElementById("bearName").value;//stores name value from input box
-  bear.name = name;//puts the name value into the bear object
-  alert("Why don't you remember my name!")//alert
-});
+
 
 	$("#feed").click(function(){//puts event listener on button with feed ID
   	bear.feed();//runs feed function from object
@@ -145,10 +152,28 @@ var faces = function (){
 	
 }
 
-// var gameOver = function () {
-// 	if (bear.hunger === 10 || bear.boredom === 10 || bear.sleepiness === 10){
-// 		Window.clearInterval(hungerInterval);
-// 	}
-// }
-// 	gameOver ();
+var dimmer = function() {
+	$("#dimmer").show();
+	$("#lights").html("lights on")
+
+}
+
+var lights = function (){
+
+	$("#lights").click(function(){
+		dimmer();	
+	})
+}
+ lights();
+
+	// $("#feed").click(function(){//puts event listener on button with feed ID
+ //  	bear.feed();//runs feed function from object
+ //  	hungerMeter.innerText = bear.hunger;//sets hunger meter text to hunger value in bear object
+	// })
+
+	// 		) 
+// 		// ($($("#lights").html("lights on")));
+		
+// //     if (typeof bool=='undefined') bool=true; // so you can shorten dim(true) to dim()
+// //     document.getElementById('dimmer').style.display=(bool?'block':'none');
 
