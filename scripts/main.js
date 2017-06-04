@@ -171,7 +171,7 @@ var bright = function() {
 //function for turning lights on and off
 var lights = function (){
 
-	$("#lights-on").click(function(){//calls the dimmer function on button click
+	$("#lights").click(function(){//calls the dimmer function on button click
 		dimmer();
 	})
 

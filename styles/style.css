@@ -97,6 +97,28 @@ header{
 }
 
  #lights-on{
- 	margin-top: 400px;
+ 	font-family: 'Karla', sans-serif;
+ 	margin: 0 auto;
+ 	background-color: red;
+ 	margin: 400px 0 0 50%;
+ 	display: block;
+ 	width: 100px;
+ 	color: #fff;
+ 	border: 1px solid #fff;
+ 	text-align: center;
+ 	outline: none;
+ 	text-decoration: none;
+
  }
 
+#lights-on:hover
+#lights:active{
+	background-color: #fff;
+	color: #000;
+}
+.category{
+	font-family: 'Karla', sans-serif;
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
