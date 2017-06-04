@@ -20,6 +20,10 @@ header{
 	justify-content: space-between;
 
 }
+input{
+	font-family: 'Karla', sans-serif;
+	width: 50px;
+}
 
 .left-button{
 	font-family: 'Karla', sans-serif;

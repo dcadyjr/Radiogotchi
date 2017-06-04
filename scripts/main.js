@@ -21,10 +21,7 @@ var bear = {
 };
 //Global variables
 
-var dimmer = function() {
-	$("#dimmer").show();
-	$("#lights").html("lights on")
-	}
+
 
 var image = $("#start")[0];//gets the image element
 
@@ -40,17 +37,19 @@ boredomMeter.innerText = bear.boredom;
 var sleepinessMeter = $("#sleepiness")[0];
 sleepinessMeter.innerText = bear.sleepiness;
 
+var nameTag	= $("#showName")[0];
+
+//end Global variables
+
+
 var nameButton = $("#nameButton")[0];//gets name button element
 	
 	nameButton.addEventListener("click", function(){//adds click event listener
 	var name = document.getElementById("bearName").value;//stores name value from input box
   	bear.name = name;//puts the name value into the bear object
-  	alert("Why don't you remember my name!")//alert
+  	nameTag.innerText = bear.name;
 	});
-// var endGame;
 
-
-//end Global variables
 
 
 var feed = function (){
@@ -159,10 +158,10 @@ var faces = function (){
 	}
 	
 }
-//varialbles for lights function
+
 var dimmer = function() {
-	$("#dimmer").show();//shows the #dimmer css
-}
+	$("#dimmer").show();
+	}
 
 var bright = function() {
 	$("#dimmer").hide();//hides the #dimmer css
