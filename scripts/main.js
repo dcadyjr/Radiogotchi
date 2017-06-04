@@ -182,11 +182,11 @@ var lights = function (){
 
 //Animations
 
-var animate = function () {
+var animate = function () {//animate function
 	
-	$("#play").click(function(){
-		console.log("hi");
-	$("#imgBear").addClass("animate");
+	$("#play").click(function(){//adds event listener to play dive
+	$("#imgBear").addClass("animate");//adds animate class to image to fire css animation
 	})
+
 }
 animate ();
