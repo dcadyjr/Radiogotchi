@@ -60,7 +60,7 @@ input{
 	color:	white;
  }
 
-#start {
+#imgBear {
 	width: 200px;
 	height: 200px;
 	display: block;
@@ -71,23 +71,6 @@ input{
 #title{
 	color: white;
 }
-
- #hunger{
- 	
- }
-
- #sleepiness{
- 	
- }
-
- #boredom{
- 	
- }
- 
- #age {
- 	
-
- }
 
  #dimmer{
  	background: #000;
@@ -105,7 +88,7 @@ input{
  	font-family: 'Karla', sans-serif;
  	margin: 0 auto;
  	background-color: red;
- 	margin: 400px 0 0 50%;
+ 	margin: 500px 0 0 50%;
  	display: block;
  	width: 100px;
  	color: #fff;

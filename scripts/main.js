@@ -2,40 +2,40 @@ console.log("linked");
 
 var bear = {
 	name: "",
-	hunger: 5,
-	boredom: 5,
-	sleepiness: 5,
+	fitter: 5,
+	happier: 5,
+	productive: 5,
 	age: 0,
 	feed: function(){
 		// alert("tasty!");
-		this.hunger = this.hunger - 1;
+		this.fitter = this.fitter + 1;
 	},
 	excite: function(){
 		// alert("yes");
-		this.boredom = this.boredom - 1;
+		this.happier = this.happier + 1;
 	},
 	sleep: function(){
 		// alert("Fitter Happier");
-		this.sleepiness = this.sleepiness - 1;
+		this.productive = this.productive + 1;
 	}
 };
 //Global variables
 
 
 
-var image = $("#start")[0];//gets the image element
+var image = $("#imgBear")[0];//gets the image element
 
 var ageMeter = $("#age")[0];
 ageMeter.innerText = bear.age;
 
-var hungerMeter = $("#hunger")[0];//gets bunger span
-hungerMeter.innerText = bear.hunger;//sets the text of the hungermeter = to the hunger property value
+var fitterMeter = $("#fitter")[0];//gets bunger span
+fitterMeter.innerText = bear.fitter;//sets the text of the hungermeter = to the hunger property value
 
-var	boredomMeter = $("#boredom")[0];//gets boredom span
-boredomMeter.innerText = bear.boredom;
+var	happierMeter = $("#happier")[0];//gets boredom span
+happierMeter.innerText = bear.happier;
 
-var sleepinessMeter = $("#sleepiness")[0];
-sleepinessMeter.innerText = bear.sleepiness;
+var productiveMeter = $("#productive")[0];
+productiveMeter.innerText = bear.productive;
 
 var nameTag	= $("#showName")[0];
 
@@ -55,7 +55,7 @@ var nameButton = $("#nameButton")[0];//gets name button element
 var feed = function (){
 	$("#feed").click(function(){//puts event listener on button with feed ID
   	bear.feed();//runs feed function from object
-  	hungerMeter.innerText = bear.hunger;//sets hunger meter text to hunger value in bear object
+  	fitterMeter.innerText = bear.fitter;//sets hunger meter text to hunger value in bear object
 	})
 }
 	feed();
@@ -63,7 +63,7 @@ var feed = function (){
 var play = function (){
 	$("#bored-btn").click(function() {//puts event listener on button with bored ID
 		bear.excite();//runs excite function from object
-		boredomMeter.innerText = bear.boredom;//sets boredom meter text to boredom value in the bear object
+		happierMeter.innerText = bear.happier;//sets boredom meter text to boredom value in the bear object
 	})
 }
 	play ();
@@ -71,20 +71,20 @@ var play = function (){
 var sleep = function () {
 	$("#sleep").click(function() {//puts event listener on button with sleep ID
 		bear.sleep();//runs sleep function from object
-		sleepinessMeter.innerText = bear.sleepiness;////sets sleepiness meter text to sleepiness value in the bear object
+		productiveMeter.innerText = bear.productive;////sets sleepiness meter text to sleepiness value in the bear object
 	})
 }
 	sleep ();
 
-var boredomClock = function (){
+var happierClock = function (){
 
 	var setIntervalID = setInterval(
   		function(){
 
-    	bear.boredom++;
-    	boredomMeter.innerText = bear.boredom;
+    	bear.happier--;
+    	happierMeter.innerText = bear.happier;
 
-   	if (bear.hunger === 10 || bear.boredom === 10 || bear.sleepiness === 10) {
+   	if (bear.fitter === 0 || bear.happier === 0 || bear.sleepiness === 0) {
     	clearInterval(setIntervalID); 	
     }
 
@@ -92,7 +92,7 @@ var boredomClock = function (){
   },
 	3000);
 }
-	boredomClock ();
+	happierClock ();
 
 var ageClock = function (){
 	var setIntervalID = setInterval(
@@ -101,7 +101,7 @@ var ageClock = function (){
     	bear.age++;
     	ageMeter.innerText = bear.age;
 
-   	if (bear.hunger === 10 || bear.boredom === 10 || bear.sleepiness === 10) {
+   	if (bear.fitter === 0 || bear.happier === 0 || bear.sleepiness === 0) {
     	clearInterval(setIntervalID); 	
     }
 
@@ -110,32 +110,32 @@ var ageClock = function (){
 }
 	ageClock ();
 
-var sleepinessClock = function(){
+var productiveClock = function(){
 	
 	var setIntervalID = setInterval(
   		function(){
 
-    	bear.sleepiness++;
-    	sleepinessMeter.innerText = bear.sleepiness;
+    	bear.productive--;
+    	productiveMeter.innerText = bear.productive;
 
-   	if (bear.hunger === 10 || bear.boredom === 10 || bear.sleepiness === 10) {
+   	if (bear.fitter === 0 || bear.happier === 0 || bear.productive === 0) {
     	clearInterval(setIntervalID); 	
     }
     faces ();//calls the image changeing function below
   },
 	3000);
 }
-	sleepinessClock ();
+	productiveClock ();
 
-var hungerClock = function (){
+var fitterClock = function (){
 
 	var setIntervalID = setInterval(
   		function(){
 
-    	bear.hunger++;
-    	hungerMeter.innerText = bear.hunger;
+    	bear.fitter--;
+    	fitterMeter.innerText = bear.fitter;
 
-   	if (bear.hunger === 10 || bear.boredom === 10 || bear.sleepiness === 10) {
+   	if (bear.fitter === 0 || bear.happier === 0 || bear.productive === 0) {
     	clearInterval(setIntervalID);
     }
     faces ();//calls the image changeing function below
@@ -143,16 +143,16 @@ var hungerClock = function (){
 	3000);
 
 }
-	hungerClock ();
+	fitterClock ();
 
 
 var faces = function (){
-	if (bear.hunger > 6 && bear.hunger < 10 || bear.boredom > 6 && bear.boredom < 10 || bear.sleepiness > 6 && bear.sleepiness < 10) {// if the score is greater than 6
-	  image.setAttribute("src", "https://s-media-cache-ak0.pinimg.com/236x/b5/da/ab/b5daaba84f15204e39afbc3462c4004b.jpg");//changes the image source attribute to a new image
-	} else if (bear.hunger >= 10 || bear.boredom >= 10 || bear.sleepiness >= 10) {
+	if (bear.fiter > 6 && bear.fitter < 10 || bear.happier > 6 && bear.happier < 10 || bear.productive > 6 && bear.productive < 10) {// if the score is greater than 6
+	  image.setAttribute("src", "http://www.abc.net.au/triplej/radiohead/img/bear.gif");//changes the image source attribute to a new image
+	} else if (bear.fitter === 0 || bear.happier === 0 || bear.productive === 0) {
 		image.setAttribute("src", "https://images-na.ssl-images-amazon.com/images/I/41DMiDVRWeL._AC_UL320_SR250,320_.jpg");
-	} else if (bear.hunger < 4 || bear.sleepiness < 4 || bear.sleepiness < 4) {
-		image.setAttribute("src", "http://www.abc.net.au/triplej/radiohead/img/bear.gif");
+	} else if (bear.fitter < 4 && bear.fitter > 0 || bear.happier < 4 && bear.happier > 0 || bear.productive < 4 && bear.productive > 0) {
+		image.setAttribute("src", "https://s-media-cache-ak0.pinimg.com/236x/b5/da/ab/b5daaba84f15204e39afbc3462c4004b.jpg");
 	} else {
 			image.setAttribute("src", "http://emblemsbf.com/img/1379.jpg")
 	}
@@ -181,10 +181,12 @@ var lights = function (){
  lights();
 
 //Animations
- $( "#play" ).click(function() {
- 
-  $( "#start" ).animate({
-    left: "350px"});//on to something. research back and forth. use in if statement?
 
-});
-
+var animate = function () {
+	
+	$("#play").click(function(){
+		console.log("hi");
+	$("#imgBear").addClass("animate");
+	})
+}
+animate ();
