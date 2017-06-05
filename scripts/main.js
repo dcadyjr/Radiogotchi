@@ -167,16 +167,27 @@ var bright = function() {
 	$("#dimmer").hide();//hides the #dimmer css
 }
 
+var lightsAreOn = true;
+
 //function for turning lights on and off
 var lights = function (){
 
+
 	$("#lights").click(function(){//calls the dimmer function on button click
+		if (lightsAreOn === true) {
 		dimmer();
+		lightsAreOn = false;
+		$("#lights-btn").html("keep it light");
+		} else {
+			bright();
+			lightsAreOn = true;
+			$("#lights-btn").html("it's always best when the light is out");
+		}
 	})
 
-	$("#lights-on").click(function(){//calls the bright funtion on button click
-		bright();
-	})
+	// $("#lights-on").click(function(){//calls the bright funtion on button click
+	// 	bright();
+	// })
 }
  lights();
 
