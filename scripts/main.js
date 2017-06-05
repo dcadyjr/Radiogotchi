@@ -158,7 +158,7 @@ var faces = function (){
 	}
 	
 }
-
+//variables for lights
 var dimmer = function() {
 	$("#dimmer").show();
 	}
@@ -186,6 +186,11 @@ var animate = function () {//animate function
 	
 	$("#play").click(function(){//adds event listener to play dive
 	$("#imgBear").addClass("animate");//adds animate class to image to fire css animation
+	
+	window.setTimeout(function() {
+		$("#imgBear").removeClass("animate");
+	}, 4100);
+
 	})
 
 }
