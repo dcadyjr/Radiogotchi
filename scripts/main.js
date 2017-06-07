@@ -1,4 +1,3 @@
-console.log("linked");
 
 var bear = {
 	name: "",
@@ -44,21 +43,21 @@ var nameTag	= $("#showName")[0];
 
 var nameButton = $("#nameButton")[0];//gets name button element
 	
-	nameButton.addEventListener("click", function(){//adds click event listener
+nameButton.addEventListener("click", function(){//adds click event listener
 	var name = document.getElementById("bearName").value;//stores name value from input box
   	bear.name = name;//puts the name value into the bear object
   	nameTag.innerText = bear.name;
-	});
+});
 
 
 
 var feed = function (){
 	$("#feed").click(function(){//puts event listener on button with feed ID
-  	bear.feed();//runs feed function from object
-  	fitterMeter.innerText = bear.fitter;//sets hunger meter text to hunger value in bear object
+  		bear.feed();//runs feed function from object
+  		fitterMeter.innerText = bear.fitter;//sets hunger meter text to hunger value in bear object
 	})
 }
-	feed();
+feed();
 
 var play = function (){
 	$("#bored-btn").click(function() {//puts event listener on button with bored ID
@@ -66,7 +65,7 @@ var play = function (){
 		happierMeter.innerText = bear.happier;//sets boredom meter text to boredom value in the bear object
 	})
 }
-	play ();
+play ();
 
 var sleep = function () {
 	$("#sleep").click(function() {//puts event listener on button with sleep ID
@@ -74,76 +73,63 @@ var sleep = function () {
 		productiveMeter.innerText = bear.productive;////sets sleepiness meter text to sleepiness value in the bear object
 	})
 }
-	sleep ();
+sleep ();
 
 var happierClock = function (){
 
-	var setIntervalID = setInterval(
-  		function(){
-
+	var setIntervalID = setInterval(function(){
     	bear.happier--;
     	happierMeter.innerText = bear.happier;
 
-   	if (bear.fitter === 0 || bear.happier === 0 || bear.sleepiness === 0) {
-    	clearInterval(setIntervalID); 	
-    }
+   		if (bear.fitter === 0 || bear.happier === 0 || bear.sleepiness === 0) {
+    		clearInterval(setIntervalID); 	
+    	}
 
-    faces ();
-  },
-	3000);
+    	faces ();
+  	},3000);
 }
-	happierClock ();
+happierClock ();
 
 var ageClock = function (){
-	var setIntervalID = setInterval(
-  		function(){
-
+	var setIntervalID = setInterval(function(){
     	bear.age++;
     	ageMeter.innerText = bear.age;
 
-   	if (bear.fitter === 0 || bear.happier === 0 || bear.sleepiness === 0) {
-    	clearInterval(setIntervalID); 	
-    }
+   		if (bear.fitter === 0 || bear.happier === 0 || bear.sleepiness === 0) {
+    		clearInterval(setIntervalID); 	
+    	}
 
-  },
-	7000);
+  	},7000);
 }
-	ageClock ();
+ageClock ();
 
 var productiveClock = function(){
 	
-	var setIntervalID = setInterval(
-  		function(){
-
+	var setIntervalID = setInterval(function(){
     	bear.productive--;
     	productiveMeter.innerText = bear.productive;
 
-   	if (bear.fitter === 0 || bear.happier === 0 || bear.productive === 0) {
-    	clearInterval(setIntervalID); 	
-    }
-    faces ();//calls the image changeing function below
-  },
-	3000);
+   		if (bear.fitter === 0 || bear.happier === 0 || bear.productive === 0) {
+    		clearInterval(setIntervalID); 	
+    	}
+    	faces ();//calls the image changeing function below
+  	},3000);
 }
-	productiveClock ();
+productiveClock ();
 
 var fitterClock = function (){
 
-	var setIntervalID = setInterval(
-  		function(){
-
+	var setIntervalID = setInterval(function(){
     	bear.fitter--;
     	fitterMeter.innerText = bear.fitter;
 
-   	if (bear.fitter === 0 || bear.happier === 0 || bear.productive === 0) {
-    	clearInterval(setIntervalID);
-    }
-    faces ();//calls the image changeing function below
-  },
-	3000);
-
+   		if (bear.fitter === 0 || bear.happier === 0 || bear.productive === 0) {
+    		clearInterval(setIntervalID);
+    	}
+    	faces ();//calls the image changeing function below
+  	},3000);
 }
-	fitterClock ();
+fitterClock ();
 
 
 var faces = function (){
@@ -172,36 +158,29 @@ var lightsAreOn = true;
 //function for turning lights on and off
 var lights = function (){
 
-
 	$("#lights").click(function(){//calls the dimmer function on button click
 		if (lightsAreOn === true) {
-		dimmer();
-		lightsAreOn = false;
-		$("#lights-btn").html("keep it light");
+			dimmer();
+			lightsAreOn = false;
+			$("#lights-btn").html("keep it light");
 		} else {
 			bright();
 			lightsAreOn = true;
 			$("#lights-btn").html("it's always best when the light is out");
 		}
 	})
-
-	// $("#lights-on").click(function(){//calls the bright funtion on button click
-	// 	bright();
-	// })
 }
- lights();
+lights();
 
 //Animations
 
 var animate = function () {//animate function
 	
 	$("#play").click(function(){//adds event listener to play dive
-	$("#imgBear").addClass("animate");//adds animate class to image to fire css animation
-	
-	window.setTimeout(function() {
-		$("#imgBear").removeClass("animate");
-	}, 4100);
-
+		$("#imgBear").addClass("animate");//adds animate class to image to fire css animation
+		window.setTimeout(function() {
+			$("#imgBear").removeClass("animate");
+		}, 4100);
 	})
 
 }
